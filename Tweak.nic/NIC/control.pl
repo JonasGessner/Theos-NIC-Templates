@@ -1,6 +1,4 @@
-my $default_kill = "SpringBoard";
-
-NIC->variable("KILL_RULE") = "";
+#Date & Time:
 
 use POSIX qw/strftime/;
 
@@ -8,16 +6,34 @@ NIC->variable("DATE") = strftime("%d.%m.%Y", localtime);
 
 NIC->variable("YEAR") = strftime("%Y", localtime);
 
-if (lc(NIC->variable("ARC_ENABLED")) eq "y" || lc(NIC->variable("ARC_ENABLED")) eq "yes") {
+
+#ARC:
+
+my $default_ARC_Setting = "Y";
+
+
+my $ARC_Setting = NIC->prompt("Use ARC? (Y/N)", {default => $default_ARC_Setting});
+
+
+if (uc($ARC_Setting) eq "Y" || uc($ARC_Setting) eq "YES") {
     NIC->variable("CFLAGS") = "-fobjc-arc";
 }
 else {
     NIC->variable("CFLAGS") = "-fno-objc-arc";
 }
 
+
+#Kill Rule:
+
+my $default_kill = "SpringBoard";
+
+NIC->variable("KILL_RULE") = "";
+
 my $kill_apps = NIC->prompt("KILL_APPS", "List of applications to terminate upon installation (space-separated, '-' for none)", {default => $default_kill});
-if($kill_apps ne "-") {
+
+if ($kill_apps ne "-") {
 	my @apps = split(/\s+/, $kill_apps);
 	my @commands = map {"killall -9 $_"} @apps;
+    
 	NIC->variable("KILL_RULE") = "after-install::\n\tinstall.exec \"".join("; ", @commands)."\"";
 }

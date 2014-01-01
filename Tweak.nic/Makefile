@@ -6,7 +6,7 @@ include @@THEOS@@/makefiles/common.mk
 
 TWEAK_NAME = @@PROJECTNAME@@
 @@PROJECTNAME@@_CFLAGS = @@CFLAGS@@
-@@PROJECTNAME@@_FILES = Tweak.xm
+@@PROJECTNAME@@_FILES = @@PROJECTNAME@@.xm
 @@PROJECTNAME@@_FRAMEWORKS = Foundation
 
 include $(THEOS_MAKE_PATH)/tweak.mk

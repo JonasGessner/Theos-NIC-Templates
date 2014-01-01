@@ -1,5 +1,5 @@
 //
-//  @@PROJECTNAME@@.mm
+//  @@PROJECTNAME@@.m
 //  @@FULLPROJECTNAME@@
 //
 //  Created by @@USER@@ on @@DATE@@.

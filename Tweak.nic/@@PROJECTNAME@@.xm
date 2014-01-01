@@ -1,5 +1,5 @@
 //
-//  Tweak.xm
+//  @@PROJECTNAME@@.xm
 //  @@FULLPROJECTNAME@@
 //
 //  Created by @@USER@@ on @@DATE@@.

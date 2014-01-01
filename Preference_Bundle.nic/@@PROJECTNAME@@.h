@@ -6,8 +6,7 @@
 //  Copyright (c) @@YEAR@@ @@USER@@. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <Preferences/Preferences.h>
+#import "Preferences/PSListController.h"
 
 @interface @@PROJECTNAME@@ListController : PSListController
 
