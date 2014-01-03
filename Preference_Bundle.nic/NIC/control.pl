@@ -6,6 +6,9 @@ NIC->variable("DATE") = strftime("%d.%m.%Y", localtime);
 
 NIC->variable("YEAR") = strftime("%Y", localtime);
 
+#Deployment Target:
+
+NIC->variable("DEPLOYMENT_TARGET") = "5.0";
 
 #ARC:
 
@@ -22,3 +25,4 @@ else {
     
     NIC->variable("LOADER") = "[[self loadSpecifiersFromPlistName:@\"" . NIC->variable("PROJECTNAME") . "\" target:self] retain]"
 }
+

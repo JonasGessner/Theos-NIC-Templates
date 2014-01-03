@@ -13,7 +13,7 @@
 	<key>CFBundleDisplayName</key>
 	<string>@@PROJECTNAME@@</string>
 	<key>MinimumOSVersion</key>
-	<string>5.0</string>
+	<string>@@DEPLOYMENT_TARGET@@</string>
 	<key>CFBundleSupportedPlatforms</key>
 	<array>
 		<string>iPhoneOS</string>

@@ -1,12 +1,12 @@
 //
-//  @@PROJECTNAME@@.m
+//  @@PROJECTNAME@@ListController.m
 //  @@FULLPROJECTNAME@@
 //
 //  Created by @@USER@@ on @@DATE@@.
 //  Copyright (c) @@YEAR@@ @@USER@@. All rights reserved.
 //
 
-#import "@@PROJECTNAME@@.h"
+#import "@@PROJECTNAME@@ListController.h"
 
 @implementation @@PROJECTNAME@@ListController
 

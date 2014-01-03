@@ -1,12 +1,14 @@
 ARCHS = armv7 armv7s arm64
 
-TARGET = iphone:clang:latest:5.0
+TARGET = iphone:clang:latest:@@DEPLOYMENT_TARGET@@
+
+THEOS_BUILD_DIR = Packages
 
 include @@THEOS@@/makefiles/common.mk
 
 BUNDLE_NAME = @@PROJECTNAME@@
 @@PROJECTNAME@@_CFLAGS = @@CFLAGS@@
-@@PROJECTNAME@@_FILES = @@PROJECTNAME@@.m
+@@PROJECTNAME@@_FILES = @@PROJECTNAME@@ListController.m
 @@PROJECTNAME@@_INSTALL_PATH = /Library/PreferenceBundles
 @@PROJECTNAME@@_FRAMEWORKS = Foundation UIKit
 @@PROJECTNAME@@_PRIVATE_FRAMEWORKS = Preferences

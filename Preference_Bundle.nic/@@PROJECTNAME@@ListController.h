@@ -1,5 +1,5 @@
 //
-//  @@PROJECTNAME@@.hh
+//  @@PROJECTNAME@@ListController.h
 //  @@FULLPROJECTNAME@@
 //
 //  Created by @@USER@@ on @@DATE@@.
