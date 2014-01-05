@@ -1,5 +1,5 @@
 //
-//  @@PROJECTNAME@@.xm
+//  @@PROJECTNAME@@SectionView.h
 //  @@FULLPROJECTNAME@@
 //
 //  Created by @@USER@@ on @@DATE@@.
@@ -7,15 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#include <substrate.h>
+#import <UIKit/UIKit.h>
 
-%group main
+@interface @@PROJECTNAME@@SectionView : UIView
 
-%end
-
-
-%ctor {
-	@autoreleasepool {
-		%init(main);
-	}
-}
+@end
