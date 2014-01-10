@@ -11,6 +11,4 @@
 
 @interface @@PROJECTNAME@@Section : NSObject <CCSection>
 
-@property (nonatomic, @@STRONG_PROPERTY@@) @@PROJECTNAME@@SectionView *view;
-
 @end

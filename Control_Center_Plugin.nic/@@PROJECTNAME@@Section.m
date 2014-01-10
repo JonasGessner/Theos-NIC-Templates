@@ -11,6 +11,9 @@
 @interface @@PROJECTNAME@@Section ()
 
 @property (nonatomic, @@STRONG_PROPERTY@@) NSBundle *bundle;
+@property (nonatomic, @@STRONG_PROPERTY@@) @@PROJECTNAME@@SectionView *view;
+
+@property (nonatomic, @@WEAK_PROPERTY@@) UIViewController <CCSectionDelegate> *delegate;
 
 @end
 
@@ -42,6 +45,14 @@
 
 - (void)dealloc {
     @@DEALLOC@@
+}
+
+- (void)controlCenterWillAppear {
+    
+}
+
+- (void)controlCenterDidDisappear {
+    
 }
 
 @end
