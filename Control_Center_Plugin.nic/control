@@ -1,6 +1,6 @@
 Package: @@PACKAGENAME@@
 Name: @@FULLPROJECTNAME@@
-Depends: ccloader, firmware (>= 7.0)
+Depends: de.j-gessner.ccloader, firmware (>= 7.0)
 Version: 0.0.1
 Architecture: iphoneos-arm
 Description: An awesome Control Center plugin!
