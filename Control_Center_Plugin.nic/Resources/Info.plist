@@ -23,7 +23,7 @@
 	<key>DTPlatformName</key>
 	<string>iphoneos</string>
 	<key>MinimumOSVersion</key>
-	<string>@@DEPLOYMENT_TARGET@@</string>
+	<string>@@DEPLOYMENT_TARGET@@</string>@@REPLACE_SECTION@@
 	<key>NSPrincipalClass</key>
 	<string>@@PROJECTNAME@@Section</string>
 </dict>

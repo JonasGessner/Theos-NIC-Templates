@@ -14,6 +14,14 @@ NIC->variable("DEPLOYMENT_TARGET") = "7.0";
 
 my $ARC_Setting = NIC->prompt("Use ARC? (Y/N)", {default => "Y"});
 
+my $Replace_ID = NIC->prompt("Stock section ID to replace? (ex. com.apple.controlcenter.settings, return \"-\" for none)", {default => "-"});
+
+if ($Replace_ID eq "-") {
+    NIC->variable("REPLACE_SECTION") = "";
+}
+else {
+    NIC->variable("REPLACE_SECTION") = "\n\t<key>CCReplacingStockSectionID</key>\n\t<string>" . $Replace_ID . "</string>";
+}
 
 if (uc($ARC_Setting) eq "Y" || uc($ARC_Setting) eq "YES") {
     NIC->variable("CFLAGS") = "-fobjc-arc";
