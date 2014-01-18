@@ -1,11 +1,12 @@
 #ifndef __LP64__
 
-#import <objc/runtime.h>
-
 #import "TouchFix.h"
 
+#import "UITouch+Private.h"
 
-@interface SCEventProxy : NSObject {
+#import <objc/runtime.h>
+
+@interface @@PROJECTNAME@@__GSEvent : NSObject {
 @public
     unsigned int flags;
     unsigned int type;
@@ -22,33 +23,46 @@
     float y3;
     unsigned int ignored4[3];
 }
+
+@end
+
+@implementation @@PROJECTNAME@@__GSEvent
+
 @end
 
 
-@implementation SCEventProxy
+@interface UIEvent ()
+
+- (id)_initWithEvent:(@@PROJECTNAME@@__GSEvent *)fp8 touches:(id)fp12;
+
 @end
 
 
-
-@implementation UITouch (@@PROJECTNAME@@_TouchFix)
+@implementation UITouch (@@PROJECTNAME@@__TouchFix)
 
 - (instancetype)initWithPoint:(CGPoint)point andView:(UIView *)view {
     self = [super init];
     if (self) {
         CGRect frameInWindow;
+        
         if ([view isKindOfClass:[UIWindow class]]) {
             frameInWindow = view.frame;
         }
         else {
             frameInWindow = [view.window convertRect:view.frame fromView:view.superview];
         }
-        
+         
         _tapCount = 1;
         _locationInWindow = point;
         _previousLocationInWindow = _locationInWindow;
         UIView *target = [view.window hitTest:_locationInWindow withEvent:nil];
+#if !__has_feature(objc_arc)
+        _view = [target retain];
+        _window = [view.window retain];
+#else
         _view = target;
         _window = view.window;
+#endif
         _phase = UITouchPhaseBegan;
         _touchFlags._firstTouchForView = 1;
         _touchFlags._isTap = 1;
@@ -57,43 +71,42 @@
     return self;
 }
 
-- (void)changeToPhase:(UITouchPhase)phase {
-    _phase = phase;
-    _timestamp = [NSDate timeIntervalSinceReferenceDate];
-}
-
 @end
 
-
-@interface UIEvent ()
-
-- (instancetype)_initWithEvent:(SCEventProxy *)fp8 touches:(id)fp12;
-
-@end
-
-@implementation UIEvent (@@PROJECTNAME@@_TouchFix)
+@implementation UIEvent (@@PROJECTNAME@@__TouchFix)
 
 - (instancetype)initWithTouch:(UITouch *)touch {
     CGPoint location = [touch locationInView:touch.window];
-    SCEventProxy *eventProxy = [[SCEventProxy alloc] init];
-    eventProxy->x1 = location.x;
-    eventProxy->y1 = location.y;
-    eventProxy->x2 = location.x;
-    eventProxy->y2 = location.y;
-    eventProxy->x3 = location.x;
-    eventProxy->y3 = location.y;
-    eventProxy->sizeX = 1.0;
-    eventProxy->sizeY = 1.0;
-    eventProxy->flags = ([touch phase] == UITouchPhaseEnded) ? 0x1010180 : 0x3010180;
-    eventProxy->type = 3001;
     
-    Class cls = objc_getClass("UITouchesEvent");
+    @@PROJECTNAME@@__GSEvent *gsEventProxy = [[@@PROJECTNAME@@__GSEvent alloc] init];
     
-    self = [cls alloc];
-    self = [self _initWithEvent:eventProxy touches:[NSSet setWithObject:touch]];
+    gsEventProxy->x1 = location.x;
+    gsEventProxy->y1 = location.y;
+    gsEventProxy->x2 = location.x;
+    gsEventProxy->y2 = location.y;
+    gsEventProxy->x3 = location.x;
+    gsEventProxy->y3 = location.y;
+    gsEventProxy->sizeX = 1.0f;
+    gsEventProxy->sizeY = 1.0f;
+    gsEventProxy->flags = ([touch phase] == UITouchPhaseEnded) ? 0x1010180 : 0x3010180;
+    gsEventProxy->type = 3001;
+    
+#if !__has_feature(objc_arc)
+    [self release];
+#endif
+    
+    self = nil;
+    
+    self = [[objc_getClass("UITouchesEvent") alloc] _initWithEvent:gsEventProxy touches:[NSSet setWithObject:touch]];
+    
+#if !__has_feature(objc_arc)
+    [gsEventProxy release];
+#endif
+    
     return self;
 }
 
 @end
 
 #endif
+
