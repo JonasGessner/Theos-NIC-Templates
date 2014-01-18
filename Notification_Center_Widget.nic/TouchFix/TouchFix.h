@@ -15,7 +15,7 @@
 @interface UITouch (@@PROJECTNAME@@_TouchFix)
 
 - (instancetype)initWithPoint:(CGPoint)point andView:(UIView *)view;
-- (void)setPhase:(UITouchPhase)phase;
+- (void)changeToPhase:(UITouchPhase)phase;
 
 @end
 

@@ -73,13 +73,13 @@
 - (float)_tableView:(id)arg1 heightForCustomInSection:(int)arg2 isHeader:(BOOL)arg3;
 - (id)_tableView:(id)arg1 viewForCustomInSection:(int)arg2 isHeader:(BOOL)arg3;
 - (void)_unloadBundleControllers;
-- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(int)arg2;
+- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(NSInteger)arg2;
+- (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(NSInteger)arg2;
 - (void)addSpecifier:(id)arg1 animated:(BOOL)arg2;
 - (void)addSpecifier:(id)arg1;
 - (void)addSpecifiersFromArray:(id)arg1 animated:(BOOL)arg2;
 - (void)addSpecifiersFromArray:(id)arg1;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (void)alertView:(id)arg1 clickedButtonAtIndex:(NSInteger)arg2;
 - (void)beginUpdates;
 - (id)bundle;
 - (id)cachedCellForSpecifier:(id)arg1;

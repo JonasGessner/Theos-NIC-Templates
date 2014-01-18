@@ -92,7 +92,7 @@
     UITouch *touch = [[UITouch alloc] initWithPoint:[self.view convertPoint:point toView:self.view.window] andView:self.view];
     UIEvent *eventDown = [[UIEvent alloc] initWithTouch:touch];
     [touch.view touchesBegan:[eventDown allTouches] withEvent:eventDown];
-    [touch setPhase:UITouchPhaseEnded];
+    [touch changeToPhase:UITouchPhaseEnded];
     
     UIEvent *eventUp = [[UIEvent alloc] initWithTouch:touch];
     [touch.view touchesEnded:[eventUp allTouches] withEvent:eventUp];

@@ -57,7 +57,7 @@
     return self;
 }
 
-- (void)setPhase:(UITouchPhase)phase {
+- (void)changeToPhase:(UITouchPhase)phase {
     _phase = phase;
     _timestamp = [NSDate timeIntervalSinceReferenceDate];
 }
