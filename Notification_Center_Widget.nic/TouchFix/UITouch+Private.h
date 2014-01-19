@@ -32,6 +32,8 @@
     struct CGSize _displacement;
 }
 
+- (void)setPhase:(UITouchPhase)phase;
+
 @end
 
 #endif

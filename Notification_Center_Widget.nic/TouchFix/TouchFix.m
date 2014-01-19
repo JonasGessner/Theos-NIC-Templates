@@ -2,8 +2,6 @@
 
 #import "TouchFix.h"
 
-#import "UITouch+Private.h"
-
 #import <objc/runtime.h>
 
 @interface @@PROJECTNAME@@__GSEvent : NSObject {
