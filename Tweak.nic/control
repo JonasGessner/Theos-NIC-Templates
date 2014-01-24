@@ -1,9 +1,8 @@
 Package: @@PACKAGENAME@@
 Name: @@FULLPROJECTNAME@@
-Depends: mobilesubstrate
+Depends: mobilesubstrate, firmware (>= @@DEPLOYMENT_TARGET@@)
 Version: 0.0.1
 Architecture: iphoneos-arm
 Description: An awesome Cydia Substrate tweak!
-Maintainer: @@USER@@
 Author: @@USER@@
 Section: Tweaks

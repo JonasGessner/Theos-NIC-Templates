@@ -1,0 +1,5 @@
+#!/bin/sh
+chown @@USER@@:wheel /Library/LaunchDaemons/@@PACKAGENAME@@.plist
+chmod 644 /Library/LaunchDaemons/@@PACKAGENAME@@.plist
+launchctl load /Library/LaunchDaemons/@@PACKAGENAME@@.plist
+exit 0

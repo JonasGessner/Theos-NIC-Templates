@@ -1,0 +1,2 @@
+name "iOS/XPC Service"
+constrain "theos" to link_theos

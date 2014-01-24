@@ -1,3 +1,5 @@
+#! /usr/local/bin/perl
+
 #Date & Time:
 
 use POSIX qw/strftime/;
@@ -8,7 +10,7 @@ NIC->variable("YEAR") = strftime("%Y", localtime);
 
 #Deployment Target:
 
-NIC->variable("DEPLOYMENT_TARGET") = "7.0";
+NIC->prompt("DEPLOYMENT_TARGET", "Deployment Target?", {default => "7.0"});
 
 #ARC:
 
