@@ -22,7 +22,7 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        self.bundle = @@BUNDLE@@;
+        self.bundle = [NSBundle bundleForClass:[self class]];
     }
     return self;
 }
@@ -45,6 +45,8 @@
 
 - (void)dealloc {
     @@DEALLOC@@
+    self.view = nil;
+    self.bundle = nil;
 }
 
 - (void)controlCenterWillAppear {

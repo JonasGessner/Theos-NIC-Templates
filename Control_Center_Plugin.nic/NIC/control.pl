@@ -33,8 +33,6 @@ if (uc($ARC_Setting) eq "Y" || uc($ARC_Setting) eq "YES") {
     NIC->variable("WEAK_PROPERTY") = "weak";
     
     NIC->variable("DEALLOC") = "";
-    
-    NIC->variable("BUNDLE") = "[NSBundle bundleForClass:[self class]]";
 }
 else {
     NIC->variable("CFLAGS") = "-fno-objc-arc";
@@ -43,8 +41,6 @@ else {
     
     NIC->variable("WEAK_PROPERTY") = "assign";
     
-    NIC->variable("DEALLOC") = "[super dealloc];\n\t[self.view release];\n\tself.view = nil;\n\t[self.bundle release];\n\tself.bundle = nil;";
-    
-    NIC->variable("BUNDLE") = "[[NSBundle bundleForClass:[self class]] retain]";
+    NIC->variable("DEALLOC") = "[super dealloc];\n\t[self.view release];";
 }
 
