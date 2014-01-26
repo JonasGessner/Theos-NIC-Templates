@@ -45,8 +45,6 @@
 
 - (void)dealloc {
     @@DEALLOC@@
-    self.view = nil;
-    self.bundle = nil;
 }
 
 - (void)controlCenterWillAppear {
