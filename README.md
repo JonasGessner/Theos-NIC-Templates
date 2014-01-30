@@ -1,9 +1,9 @@
 Theos NIC Templates
 ===================
 
-Modern templates for NIC. ARC support and the deployment target can be easily selected when setting up a new project using NIC. The default achitechtures are armv7, armv7s and arm64 and the default compiler is llvm.
+Modern templates for NIC. ARC support and the deployment target can be easily selected when setting up a new project using NIC. The default architectures are armv7, armv7s and arm64 and the default compiler is llvm.
 
-Place the nic.tar archives in `theos_root/templates` and use nic.pl from theos to create a new project.
+To use these templates with NIC place all the `.nic.tar` archives from the `Archived Templates` folder in `<theos_root_directory>/templates`.
 
 
 Credits

@@ -36,8 +36,8 @@ else {
     NIC->variable("UNLOAD_VIEW") = "[_backgroundImageView removeFromSuperview];\n\t\t[_backgroundImageView release];\n\t\t_backgroundImageView = nil;";
     NIC->variable("STRONG_PROPERTY") = "retain";
     
-    NIC->variable("DEALLOC") = "\n- (void)dealloc {\n\t[super dealloc];\n\t[self.bundle release];\n\tself.bundle = nil;\n}";
-    NIC->variable("SUPER_DEALLOC") = "[super dealloc];\n\t";
+    NIC->variable("DEALLOC") = "\n- (void)dealloc {\n\t[self.bundle release];\n\tself.bundle = nil;\n\t[super dealloc];\n}";
+    NIC->variable("SUPER_DEALLOC") = "[super dealloc];";
     NIC->variable("TOUCH_FIX_CLEANUP") = "[eventDown release];\n\t[eventUp release];\n\t[touch release];";
     NIC->variable("DEALLOC_BG_IMAGE_VIEW") = "[_backgroundImageView release];";
 }

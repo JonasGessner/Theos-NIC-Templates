@@ -53,10 +53,11 @@
 }
 
 - (void)dealloc {
-    @@SUPER_DEALLOC@@if (_backgroundImageView) {
+    if (_backgroundImageView) {
         @@UNLOAD_VIEW@@
     }
     //unload views
+    @@SUPER_DEALLOC@@
 }
 
 @end
