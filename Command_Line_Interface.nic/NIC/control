@@ -1,0 +1,2 @@
+name "iOS/Command Line Interface"
+constrain "theos" to link_theos

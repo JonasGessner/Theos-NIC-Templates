@@ -14,6 +14,6 @@
 		<string>/usr/bin/@@PROJECTNAME@@</string>
 	</array>
 	<key>UserName</key>
-	<string>@@USER@@</string>
+	<string>@@USER_NAME@@</string>
 </dict>
 </plist>

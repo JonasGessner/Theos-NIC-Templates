@@ -8,10 +8,6 @@ NIC->variable("DATE") = strftime("%d.%m.%Y", localtime);
 
 NIC->variable("YEAR") = strftime("%Y", localtime);
 
-#User:
-
-NIC->prompt("USER_NAME", "Run as user", {default => "mobile"});
-
 #Deployment Target:
 
 NIC->prompt("DEPLOYMENT_TARGET", "Deployment Target?", {default => "5.0"});

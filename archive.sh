@@ -18,4 +18,7 @@ cd Archived\ Templates
 
 ~/Developer/Jailbreak/theos/bin/nicify.pl ../Tweak.nic
 
+~/Developer/Jailbreak/theos/bin/nicify.pl ../Command_Line_Interface.nic
+
+~/Developer/Jailbreak/theos/bin/nicify.pl ../Dynamic_Library.nic
 cd ..
