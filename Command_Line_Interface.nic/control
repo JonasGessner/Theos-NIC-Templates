@@ -2,6 +2,6 @@ Package: @@PACKAGENAME@@
 Name: @@FULLPROJECTNAME@@
 Version: 0.0.1
 Architecture: iphoneos-arm
-Description: An awesome dylib!
+Description: An awesome CLI!
 Author: @@USER@@
 Section: System
